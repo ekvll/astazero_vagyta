@@ -29,7 +29,7 @@ def plot_section_track_depth(
     )
 
     ax[0].set_title(
-        f"Profil: {profile_index}\nFiltrerat: RMSE = {rmse:.2f}, Energi = {energy_removed:.2f}%\n\nMinima: 1/{len(all_minima_x)}"
+        f"Profile: {profile_index}\nFiltered: RMSE = {rmse:.2f}, Energy = {energy_removed:.2f}%\n\nMinima: 1/{len(all_minima_x)}"
     )
 
     for ax_idx, (left_maxima, right_maxima) in enumerate(
@@ -67,11 +67,11 @@ def plot_profile_with_annotations(
         marker="None",
         linestyle="-",
         color="grey",
-        label="Mätprofil Roterad",
+        label="Rotated Measurement Profile",
     )
 
     ax.plot(
-        x, y, marker=".", linestyle="None", color="black", label="Mätprofil Filtrerad"
+        x, y, marker=".", linestyle="None", color="black", label="Measurement Profile"
     )
 
     ax.plot(
@@ -91,7 +91,7 @@ def plot_profile_with_annotations(
         markersize=10,
         linestyle="None",
         color="blue",
-        label="Maxima Vänster",
+        label="Maxima Left",
     )
 
     ax.plot(
@@ -101,7 +101,7 @@ def plot_profile_with_annotations(
         markersize=10,
         linestyle="None",
         color="red",
-        label="Maxima Höger",
+        label="Maxima Right",
     )
 
     annotate_differences(ax, minima_y, left_maxima, right_maxima)
@@ -145,18 +145,18 @@ def plot_error(
     ax_e[0].plot(x, z, "k.-")
 
     ax_e[0].set_title(
-        f"Error i profil {profile_index} sektion {section}-{section+3500}\nMätprofil Orginal"
+        f"Error in profile {profile_index} section {section}-{section+3500}\nOriginal Measurement Profile"
     )
 
     ax_e[0].set_xlabel("x [mm]")
     ax_e[0].set_ylabel("z [mm]")
 
-    ax_e[1].set_title("Processad Mätprofil")
-    ax_e[1].plot(x_rotated, z_rotated, "k.-", label="Mätprofil Roterad")
+    ax_e[1].set_title("Processed Measurement Profile")
+    ax_e[1].plot(x_rotated, z_rotated, "k.-", label="Rotated Measurement Profile")
     ax_e[1].set_xlabel("x [mm]")
     ax_e[1].set_ylabel("z [mm]")
 
-    ax_e[1].plot(x_rotated, z_smooth, "r.-", label="Mätprofil Filtrerad")
+    ax_e[1].plot(x_rotated, z_smooth, "r.-", label="Filtered Measurement Profile")
     ax_e[1].legend()
 
     fig_e.tight_layout()

@@ -351,7 +351,7 @@ def plot_histogram(df, col, xlabel, save_path=None):
     plt.figure(figsize=(10, 6))
     ax = sns.histplot(values, bins=30, kde=False, color="grey", edgecolor="black")
     plt.xlabel(xlabel, fontsize=14)
-    plt.ylabel("Antal", fontsize=14)
+    plt.ylabel("Count", fontsize=14)
     plt.grid(axis="y", linestyle="--", alpha=0.6)
 
     hide_spines(ax)

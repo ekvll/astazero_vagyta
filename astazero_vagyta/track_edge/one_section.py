@@ -82,7 +82,7 @@ def get_and_prepare_profiles(filename):
     ax.set_xlabel("x [m]", fontsize=14)
     ax.set_ylabel("y [m]", fontsize=14)
     cbar = fig.colorbar(scatter, ax=ax, shrink=0.4)
-    cbar.set_label("Lutning [%]", fontsize=14)
+    cbar.set_label("Slope [%]", fontsize=14)
     hide_spines(ax)
 
     # Set the colorbar tick font size
@@ -113,8 +113,8 @@ def get_and_prepare_profiles(filename):
     )
 
     # ax_inset.set_title('In-zoomat')
-    ax_inset.set_xlabel("Lutning [%]", fontsize=14)
-    ax_inset.set_ylabel("Antal", fontsize=14)
+    ax_inset.set_xlabel("Slope [%]", fontsize=14)
+    ax_inset.set_ylabel("Count", fontsize=14)
     # hide_spines(ax_inset)
 
     ax_inset.tick_params(axis="x", labelsize=14)  # X-axis tick labels font size
@@ -137,7 +137,7 @@ def main(all):
     filenames = filenames_in_directory(path_preprocessed_data)
     print_filenames(filenames)
 
-    #args = gen_args()
+    # args = gen_args()
 
     if all == "True":
         for filename in filenames:

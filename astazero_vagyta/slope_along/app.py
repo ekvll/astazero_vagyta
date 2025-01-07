@@ -101,7 +101,7 @@ def get_and_prepare_profiles(filename):
     plot_histogram(
         df_histogram,
         "slope",
-        "Lutning [%]",
+        "Slope [%]",
         os.path.join(img_save_path, "slope_histogram"),
     )
 
@@ -177,7 +177,7 @@ def get_and_prepare_profiles(filename):
 
         # Set the colorbar label font size
         cbar = ax.collections[0].colorbar
-        cbar.ax.set_ylabel("Lutning [%]", fontsize=fontsize)
+        cbar.ax.set_ylabel("Slope [%]", fontsize=fontsize)
 
         # Set the colorbar tick font size
         cbar.ax.tick_params(labelsize=fontsize)
@@ -209,7 +209,7 @@ def main(all):
     filenames = filenames_in_directory(path_preprocessed_data)
     print_filenames(filenames)
 
-    #args = gen_args()
+    # args = gen_args()
 
     if all == "True":
         for filename in filenames:

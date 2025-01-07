@@ -130,7 +130,7 @@ def create_heatmap(df_chunk, chunk_index, path_heatmaps, num_chunks, filename):
 
     # Set the colorbar label font size
     cbar = ax.collections[0].colorbar
-    cbar.ax.set_ylabel("Lutning Medel [%]", fontsize=fontsize)
+    cbar.ax.set_ylabel("Mean Slope [%]", fontsize=fontsize)
 
     # Set the colorbar tick font size
     cbar.ax.tick_params(labelsize=fontsize)
@@ -252,7 +252,7 @@ def get_and_prepare_profiles(filename):
     plot_histogram(
         df_result[(df_result["mean"] > -40) & (df_result["mean"] < 15)],
         "mean",
-        "Lutning Medel [%]",
+        "Mean Slope [%]",
         os.path.join(path_img_slope_across_track, "slope_along_track_histogram.png"),
     )
 
@@ -305,7 +305,7 @@ def main(all):
     filenames = filenames_in_directory(path_preprocessed_data)
     print_filenames(filenames)
 
-    #args = gen_args()
+    # args = gen_args()
 
     if all == "True":
         for filename in filenames:

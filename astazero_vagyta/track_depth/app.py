@@ -351,7 +351,7 @@ def get_and_prepare_profiles(filename: str):
     plot_histogram(
         df,
         "track_depth_max",
-        "Maximalt Spårdjup [mm]",
+        "Maximum Rut Depth [mm]",
         os.path.join(path_img_track_depth, "track_depth_histogram.png"),
     )
 
@@ -421,7 +421,7 @@ def get_and_prepare_profiles(filename: str):
         )
         # Set the colorbar label font size
         cbar = ax.collections[0].colorbar
-        cbar.ax.set_ylabel("Spårdjup [mm]", fontsize=fontsize)
+        cbar.ax.set_ylabel("Rut Depth [mm]", fontsize=fontsize)
 
         # Set the colorbar tick font size
         cbar.ax.tick_params(labelsize=fontsize)
@@ -467,7 +467,7 @@ def main(all):
     filenames = filenames_in_directory(path_preprocessed_data)
     print_filenames(filenames)
 
-    #args = gen_args()
+    # args = gen_args()
 
     if all == "True":
         for filename in filenames:
